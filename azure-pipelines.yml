@@ -21,6 +21,8 @@ steps:
     azureSubscription: 'Azure for Students(aa08434c-9b8a-4653-b8ba-62609824227f)'
     appType: 'webApp'
     appName: 'timguarinowebapp'
+    deployToSlotOrASE: true
+    resourceGroupName: 'timguarinowebapp'
+    slotName: 'production'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
     deploymentMethod: 'auto'
-- task: PublishBuildArtifacts@1
