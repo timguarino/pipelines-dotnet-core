@@ -22,4 +22,4 @@ steps:
     azureSubscription: 'Azure for Students(aa08434c-9b8a-4653-b8ba-62609824227f)'
     appType: 'webApp'
     WebAppName: 'timguarinowebapp'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/*.zip'
