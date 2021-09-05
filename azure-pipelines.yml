@@ -16,13 +16,10 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
-- task: AzureWebApp@1
+- task: AzureRmWebAppDeployment@4
   inputs:
+    ConnectionType: 'AzureRM'
     azureSubscription: 'Azure for Students(aa08434c-9b8a-4653-b8ba-62609824227f)'
     appType: 'webApp'
-    appName: 'timguarinowebapp'
-    deployToSlotOrASE: true
-    resourceGroupName: 'timguarinowebapp'
-    slotName: 'production'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    deploymentMethod: 'auto'
+    WebAppName: 'timguarinowebapp'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
